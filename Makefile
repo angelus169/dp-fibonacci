@@ -15,14 +15,6 @@ checkstyle: 	## run checkstyle
 	@flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 	@flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-.PHONY: docker/image/build
-docker/image/build: 	## build docker image
-	@docker build -t python-fibonacci:latest
-
-.PHONY: docker/image/push
-docker/image/push:  	## push docker image
-	@docker push python-fibonacci:latest
-
 .PHONY: venv
 venv:  	## create virtual environment
 	@python -m venv venv
